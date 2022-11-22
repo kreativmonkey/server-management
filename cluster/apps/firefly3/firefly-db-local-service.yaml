@@ -1,0 +1,14 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: firefly-iii-mysql
+  namespace: namespace-a
+spec:
+  type: ExternalName
+  externalName: mariadb.database.svc.cluster.local
+  ports:
+  - port: 3306
+  selector:
+    app: firefly-iii
+    tier: mysql
+  clusterIP: None

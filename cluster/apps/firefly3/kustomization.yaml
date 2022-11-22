@@ -1,0 +1,18 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+namespace: firefly
+resources:
+- firefly-secrets.yaml
+- firefly-app-deployment.yaml
+- firefly-app-ingress.yaml
+- firefly-app-persistentVolume.yaml
+- firefly-app-persistentVolumeClaim.yaml
+- firefly-app-service.yaml
+- firefly-cron-ingress.yaml
+#- firefly-db-local-service.yaml
+- firefly-db-deployment.yaml
+- firefly-db-persistentVolumeClaim.yaml
+- firefly-db-service.yaml
+- firefly-importer-deployment.yaml
+- firefly-importer-service.yaml
+- firefly-importer-ingress.yaml

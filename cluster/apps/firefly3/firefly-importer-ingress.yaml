@@ -1,0 +1,27 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  annotations:
+    #kubernetes.io/tls-acme: "true"
+    cert-manager.io/cluster-issuer: letsencrypt-prod
+#    # Use these annotation if you're using nginx ingress
+#    nginx.ingress.kubernetes.io/proxy-body-size: "0"
+#    nginx.ingress.kubernetes.io/proxy-buffer-size: "8k"
+  labels:
+  name: firefly-iii-importer-ingress
+spec:
+  rules:
+  - host: ff-import.butlr.org
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: firefly-iii-importer
+            port:
+              number: 8080
+  tls:
+    - hosts:
+      - ff-import.butlr.org
+      secretName: ff-import.butlr.org-tls
