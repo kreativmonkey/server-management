@@ -11,5 +11,4 @@ spec:
   sourceRef:
     kind: GitRepository
     name: podinfo
-  targetNamespace: testing
-
+  targetNamespace: default
