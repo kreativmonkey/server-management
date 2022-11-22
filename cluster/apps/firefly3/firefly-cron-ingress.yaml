@@ -30,5 +30,5 @@ spec:
                   valueFrom:
                     secretKeyRef:
                       name: firefly-secrets
-                      key: static_cron_token
+                      key: STATIC_CRON_TOKEN
           restartPolicy: Never

@@ -35,7 +35,7 @@ spec:
           valueFrom:
             secretKeyRef:
               name: firefly-secrets
-              key: app_key
+              key: APP_KEY
         - name: DB_HOST
           value: firefly-iii-mysql
         - name: DB_CONNECTION
@@ -48,7 +48,7 @@ spec:
           valueFrom:
             secretKeyRef:
               name: firefly-secrets
-              key: db_password
+              key: DB_PASSWORD
         - name: TRUSTED_PROXIES
           value: "**"
         ports:

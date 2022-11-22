@@ -29,7 +29,7 @@ spec:
           valueFrom:
             secretKeyRef:
               name: firefly-secrets
-              key: db_password
+              key: DB_PASSWORD
         ports:
         - containerPort: 3306
           name: mysql
