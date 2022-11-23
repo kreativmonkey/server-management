@@ -3,7 +3,7 @@ kind: Kustomization
 namespace: firefly
 resources:
 - namespace.yaml
-- firefly-secrets.yaml
+#- firefly-secrets.yaml
 - firefly-app-deployment.yaml
 - firefly-app-ingress.yaml
 - firefly-app-persistentVolume.yaml

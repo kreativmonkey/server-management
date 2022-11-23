@@ -2,7 +2,7 @@
 apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
 kind: Kustomization
 metadata:
-  name: core
+  name: infrastructure
   namespace: flux-system
 spec:
   interval: 10m0s
@@ -10,7 +10,7 @@ spec:
     #- name: charts
     #- name: secrets
     #- name: crds
-  path: ./cluster/core
+  path: ./cluster/infrastructure
   prune: false
   sourceRef:
     kind: GitRepository
