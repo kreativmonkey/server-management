@@ -4,5 +4,6 @@ kind: Kustomization
 resources:
   - authentik-charts.yaml
   - bitnami.yaml
+  - ingress-nginx-charts.yaml
   - jetstack.yaml
   - starboard.yaml
