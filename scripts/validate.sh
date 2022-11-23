@@ -30,7 +30,7 @@
 
 # source: https://github.com/fluxcd/flux2-kustomize-helm-example
 
-set -o errexit
+set -o pipefail
 
 echo "INFO - Downloading Flux OpenAPI schemas"
 mkdir -p /tmp/flux-crd-schemas/master-standalone-strict
@@ -42,7 +42,7 @@ find . -type f -name '*.yaml' -print0 | while IFS= read -r -d $'\0' file;
     yq e 'true' "$file" > /dev/null
 done
 
-kubeconform_config=("-strict" "-ignore-missing-schemas" "-schema-location" "default" "-schema-location" "/tmp/flux-crd-schemas" "-verbose")
+kubeconform_config=("-strict" "-ignore-missing-schemas" "-schema-location" "default" "-schema-location" "/tmp/flux-crd-schemas" "-verbose" "--skip-kinds=Secret")
 
 echo "INFO - Validating clusters"
 find ./cluster -maxdepth 2 -type f -name '*.yaml' -print0 | while IFS= read -r -d $'\0' file;
