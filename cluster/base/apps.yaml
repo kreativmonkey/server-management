@@ -8,7 +8,7 @@ spec:
   interval: 10m0s
   dependsOn:
     #- name: secrets
-    - name: core
+    - name: infrastructure
   path: ./cluster/apps
   prune: false
   sourceRef:
